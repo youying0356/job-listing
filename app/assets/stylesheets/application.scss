@@ -18,11 +18,14 @@
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
- .jumbotron {
+ .container-fluid .jumbotron{
   background-image:url('https://ww4.sinaimg.cn/large/006tNc79jw1fc4ev80gugj30sg0lcju7.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   padding-bottom: 110px;
+  margin: 0 -15px 20px;
+  border-radius: 0;
+  color:#999999
 }
 
 .title {
@@ -71,6 +74,10 @@
 .custab:hover{
   box-shadow: 3px 3px 0px transparent;
   transition: 0.5s;
+}
+
+.navbar-default {
+ margin-bottom: 0;
 }
 
 @import url(http://fonts.googleapis.com/css?family=Roboto);
