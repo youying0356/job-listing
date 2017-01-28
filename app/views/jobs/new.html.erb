@@ -1,12 +1,20 @@
-<h1> Add a job </h1>
+<div class="row main">
+      <div class="main-center">
+      <h1> Add a job </h1>
+          <%= simple_form_for @job do |f| %>
+          <div class="form-inputs">
+            <div class="cols-sm-10">
+                <%= f.input :title, required: true, autofocus: true %>
+            </div>
+            <div class="cols-sm-10">
+                <%= f.input :description %>
+            </div>
 
-<%= simple_form_for @job do |f| %>
+          <div class="form-actions">
+            <%= f.button :submit, "提交" %>
+          </div>
+          <% end %>
 
-<%= f.input :title %>
-<%= f.input :description %>
-<%= f.input :wage_lower_bound, :label => "薪资下限" %>
-<%= f.input :wage_upper_bound, :label => "薪资上限" %>
-<%= f.input :contact_email %>
-<%= f.input :is_hidden %>
-  <%= f.submit "Submit" %>
-<% end %>
+      </div>
+    </div>
+  </div>
