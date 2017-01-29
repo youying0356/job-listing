@@ -8,9 +8,11 @@
 		<td>Wage upper bound</td>
 		<td>Location</td>
 		<td>Company</td>
-		<td>Management</td>
-		<td>CreatedAt</td>
+    <td>CreatedAt</td>
+    <td>Management</td>
+
         </tr>
+
     </thead>
 
     <% @jobs.each do |job| %>
@@ -24,6 +26,13 @@
         <td> <%= link_to(job.resumes.count, admin_job_resumes_path(job)) %> </td>
         <td> <%= job.wage_lower_bound %> </td>
         <td> <%= job.wage_upper_bound %> </td>
+        <td> <%= job.location %> </td>
+        <td> <%= job.company %> </td>
+
+        <td>
+            <%= job.created_at.strftime("%d %b. %Y") %>
+        </td>
+
         <td>
           <%= link_to("Edit", edit_admin_job_path(job), :class => "btn btn-xs btn-info") %>
           <%= link_to("Destroy", admin_job_path(job), :method => :delete, :class => "btn btn-xs btn-danger", :data => { :confirm => "Are you sure?" }) %>
@@ -33,9 +42,6 @@
             <% else %>
             <%= link_to("Hide", hide_admin_job_path(job), :method => :post,  :class => "btn btn-xs btn-warning") %>
             <% end %>
-        </td>
-        <td>
-            <%= job.created_at %>
         </td>
     </tr>
     <% end %>
