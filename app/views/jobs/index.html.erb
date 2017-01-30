@@ -28,8 +28,6 @@
   <td>Location</td>
   <td>Company</td>
   <td>CreatedAt</td>
-  <td>Management</td>
-
         </tr>
 
     </thead>
@@ -53,3 +51,7 @@
     <% end %>
   </tbody>
 </table>
+<br>
+<div class="text-center col-xs-12">
+  <%= will_paginate @jobs, renderer: BootstrapPagination::Rails %>
+</div>

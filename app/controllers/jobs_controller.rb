@@ -15,6 +15,7 @@ class JobsController < ApplicationController
   end
 
   def index
+
     @jobs = case params[:order]
             when 'by_lower_bound'
               Job.published.order('wage_lower_bound DESC')
@@ -23,6 +24,9 @@ class JobsController < ApplicationController
             else
               Job.published.recent
             end
+    @jobs = Job.all.paginate(:page => params[:page], :per_page => 10)
+
+
   end
 
 
